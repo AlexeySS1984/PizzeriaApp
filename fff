@@ -1,0 +1,6 @@
+Серьезность	Код	Описание	Проект	Файл	Строка	Состояние подавления
+Ошибка (активно)	CS0246	Не удалось найти тип или имя пространства имен "Game" (возможно, отсутствует директива using или ссылка на сборку).	WpfApp2	C:\Users\234856\source\repos\WpfApp2\WpfApp2\Pages\GameReviewPage.xaml.cs	35	
+Ошибка (активно)	CS0246	Не удалось найти тип или имя пространства имен "Review" (возможно, отсутствует директива using или ссылка на сборку).	WpfApp2	C:\Users\234856\source\repos\WpfApp2\WpfApp2\Pages\GameReviewPage.xaml.cs	185	
+Ошибка (активно)	CS0246	Не удалось найти тип или имя пространства имен "Review" (возможно, отсутствует директива using или ссылка на сборку).	WpfApp2	C:\Users\234856\source\repos\WpfApp2\WpfApp2\Pages\GameReviewPage.xaml.cs	185	
+Ошибка (активно)	CS0246	Не удалось найти тип или имя пространства имен "AppUser" (возможно, отсутствует директива using или ссылка на сборку).	WpfApp2	C:\Users\234856\source\repos\WpfApp2\WpfApp2\Pages\RegisterPage.xaml.cs	68	
+Ошибка (активно)	CS0246	Не удалось найти тип или имя пространства имен "AppUser" (возможно, отсутствует директива using или ссылка на сборку).	WpfApp2	C:\Users\234856\source\repos\WpfApp2\WpfApp2\Pages\RegisterPage.xaml.cs	68	
