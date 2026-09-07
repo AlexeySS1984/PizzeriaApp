@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3355b2bc095444a9a50761aad06a5766" Name="Diagram1">
+        <EntityTypeShape EntityType="PizzeriaDBModel.ComboDishes" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaDBModel.Combos" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaDBModel.Dishes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaDBModel.DishTypes" Width="1.5" PointX="1.5" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaDBModel.OrderDishes" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaDBModel.Orders" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaDBModel.PaymentMethods" Width="1.5" PointX="3.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaDBModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzeriaDBModel.Users" Width="1.5" PointX="3.75" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="PizzeriaDBModel.FK_ComboDishes_Combos" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaDBModel.FK_ComboDishes_Dishes" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaDBModel.FK_Orders_Combos" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaDBModel.FK_Dishes_DishTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaDBModel.FK_OrderDishes_Dishes" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaDBModel.FK_OrderDishes_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaDBModel.FK_Orders_PaymentMethods" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzeriaDBModel.FK_Orders_Users" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

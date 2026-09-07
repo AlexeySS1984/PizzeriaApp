@@ -1,0 +1,95 @@
+﻿<Page x:Class="PizzeriaApp.Pages.BuilderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Сборка заказа">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="190"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Соберите свой заказ" FontSize="26"
+                   FontWeight="Bold" Margin="0,0,0,15"/>
+
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <TextBlock Text="Тип блюда"/>
+                <ComboBox x:Name="DishTypeComboBox" Height="32" Margin="0,5,10,0"
+                          DisplayMemberPath="Name"
+                          SelectionChanged="DishTypeComboBox_SelectionChanged"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Поиск по названию ИЛИ составу (одно поле)"/>
+                <TextBox x:Name="SearchTextBox" Height="32" Margin="0,5,10,0"
+                         TextChanged="SearchTextBox_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Сортировка по цене"/>
+                <ComboBox x:Name="SortComboBox" Height="32" Margin="0,5,0,0"
+                          SelectionChanged="SortComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Сначала дешевле"/>
+                    <ComboBoxItem Content="Сначала дороже"/>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="180"/>
+            </Grid.ColumnDefinitions>
+
+            <DataGrid x:Name="DishesDataGrid" Grid.Column="0"
+                      AutoGenerateColumns="False" IsReadOnly="True"
+                      SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Name}" Width="180"/>
+                    <DataGridTextColumn Header="Состав" Binding="{Binding Composition}" Width="*"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Price, StringFormat={}{0:N2} ₽}" Width="110"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Grid.Column="1" Margin="15,0,0,0" VerticalAlignment="Center">
+                <Button Content="Добавить / заменить"
+                        Height="50" Click="AddDishButton_Click"/>
+                <Button Content="Убрать из заказа"
+                        Height="50" Margin="0,10,0,0"
+                        Click="RemoveDishButton_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <GroupBox Grid.Row="3" Header="Выбрано (не более одного блюда каждого типа)"
+                  Margin="0,12,0,0">
+            <DataGrid x:Name="SelectedDishesDataGrid"
+                      AutoGenerateColumns="False" IsReadOnly="True"
+                      SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Тип" Binding="{Binding DishType.Name}" Width="140"/>
+                    <DataGridTextColumn Header="Блюдо" Binding="{Binding Name}" Width="*"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Price, StringFormat={}{0:N2} ₽}" Width="120"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
+
+        <DockPanel Grid.Row="4" Margin="0,15,0,0">
+            <Button Content="Назад к комбо" Width="150" Height="40"
+                    Click="BackButton_Click"/>
+            <TextBlock x:Name="TotalTextBlock" FontSize="22" FontWeight="Bold"
+                       VerticalAlignment="Center" Margin="25,0,0,0"/>
+            <Button Content="Перейти к оплате" Width="190" Height="40"
+                    DockPanel.Dock="Right" HorizontalAlignment="Right"
+                    Click="CheckoutButton_Click"/>
+        </DockPanel>
+    </Grid>
+</Page>
